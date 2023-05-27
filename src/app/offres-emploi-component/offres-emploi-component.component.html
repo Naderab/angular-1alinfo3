@@ -1,0 +1,21 @@
+<table class="table" style="border:2px solid pink; background-color:rgba(149, 255, 255, 0.638);" >
+    <tr style="border:2px solid pink; color: rgb(236, 140, 156)">
+        <th>Titre</th>
+        <th>Entreprise</th>
+        <th>reference</th>
+        <th>etat</th>
+    </tr>
+    <tr *ngFor="let offre of listeEmploi" style="border:2px solid pink">
+        <td>{{offre.titre}}</td>
+        <td>{{offre.entreprise}}</td>
+        <td>{{offre.reference}}</td>
+        <td>{{offre.etat}}</td>
+        <td>
+            <button *ngIf="offre.etat==true" >Postuler</button>
+            <button *ngIf="offre.etat==false" disabled>Postuler</button>
+        </td>
+    </tr>
+
+</table>
+<button (click)="calcul()">Bilan</button>
+<p>{{nbreOffre}}</p>

@@ -3,7 +3,7 @@
         <div class="col-md-4" *ngFor="let p of productsList">
             <div class="card" style="width: 18rem;">
                 <img src="https://i0.wp.com/www.teewinek.com/wp-content/uploads/2018/12/T-Shirt-Basique-imprimante-t-shirt-personnalis%C3%A9-en-tunisie.png?fit=900%2C900&ssl=1" class="card-img-top" alt="...">
-                <div class="card-body">
+                <div class="card-body" >
                   <h5 class="card-title" [ngStyle]="{'color' : p.like>5 && 'red'}">{{p.title}}</h5>
                   <p class="card-text">Price: {{p.price}}</p>
                   <p class="card-text">Quantity: {{p.quantity}}</p>
