@@ -1,5 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {Product} from "../model/product";
+import { ProductService } from "../services/product.service";
 
 @Component(
   { 
@@ -10,31 +11,10 @@ import {Product} from "../model/product";
 export class ProductsComponent implements OnInit {
   productsList: Product[] = [];
   most_likes: number = 0;
-  constructor() {}
+  constructor(private _productService:ProductService) {}
 
   ngOnInit(): void {
-    this.productsList = [
-      {
-        id: "1",
-        title: "T-shirt 1",
-        price: 18,
-        quantity: 0,
-        like: 0
-      }, {
-        id: "2",
-        title: "T-shirt 2",
-        price: 21,
-        quantity: 10,
-        like: 0
-      }, {
-        id: "3",
-        title: "T-shirt 3",
-        price: 16,
-        quantity: 8,
-        like: 0
-      }
-    ];
-    
+    this.productsList = this._productService.listProductsService;
   }
   buy(p:Product){
     if(p.quantity>0){

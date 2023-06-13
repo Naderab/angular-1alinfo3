@@ -9,6 +9,7 @@ import { OffresEmploiComponentComponent } from './offres-emploi-component/offres
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { FormsModule } from '@angular/forms';
+import { ProductService } from './services/product.service';
 
 @NgModule({
   declarations: [
